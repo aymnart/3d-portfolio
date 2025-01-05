@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import useAlert from '../hooks/useAlert.js';
 import Alert from '../components/Alert.jsx';
 import { ArrowUpRight, MessageCircle, Plus } from 'lucide-react';
+import { Input } from '../components/GlowyInput.jsx';
 
 const Contact = () => {
   const formRef = useRef();
@@ -92,7 +93,7 @@ const Contact = () => {
           <form ref={formRef} onSubmit={handleSubmit} className="my-12 flex flex-col space-y-7">
             <label className="space-y-3">
               <span className="field-label">Full Name</span>
-              <input
+              <Input
                 type="text"
                 name="name"
                 value={form.name}
@@ -105,7 +106,7 @@ const Contact = () => {
 
             <label className="space-y-3">
               <span className="field-label">Email address</span>
-              <input
+              <Input
                 type="email"
                 name="email"
                 value={form.email}

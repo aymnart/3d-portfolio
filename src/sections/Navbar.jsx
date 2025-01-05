@@ -22,11 +22,11 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background shadow-2xl">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-background shadow-2xl">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center py-5 mx-auto c-space">
           <img src="assets/aymen_logo.svg" alt="logo" className="w-10 h-10 mr-5 rounded-full" />
-          <a href="/" className="text-white font-bold text-xl hover:text-white transition-colors">
+          <a href="/" className="text-forefround font-bold text-xl hover:text-white transition-colors">
             {firstName} {lastName}
           </a>
 

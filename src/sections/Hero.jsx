@@ -23,7 +23,7 @@ const Hero = () => {
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   return (
-    <section className="min-h-screen mt-5 w-full flex flex-col relative" id="home">
+    <section className="min-h-screen w-full flex flex-col relative" id="home">
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
         <p className="sm:text-3xl text-xl font-medium text-foreground text-center font-generalsans">
           Hi, I am {firstName} <span className="waving-hand">👋</span>
@@ -50,7 +50,7 @@ const Hero = () => {
             </group>
 
             <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+            <directionalLight position={[10, 10, 10]} intensity={1.618} />
           </Suspense>
         </Canvas>
       </div>

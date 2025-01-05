@@ -51,18 +51,22 @@ const About = () => {
         </div>
 
         <div className="col-span-1 xl:row-span-4">
-          <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <World data={sampleArcs} globeConfig={globeConfig} />
+          <div className="grid-container justify-between">
+            <div className="rounded-3xl w-full h-full sm:h-[326px] flex justify-center items-center">
+              <div className="w-full h-full">
+                <World data={sampleArcs} globeConfig={globeConfig} />
+              </div>
             </div>
             <div>
               <p className="grid-headtext">I&apos;m very flexible with time zone communications & locations</p>
               <p className="grid-subtext">
                 I&apos;m based in <strong>Tunisia</strong>, and open to remote work worldwide.
               </p>
-              <Button isBeam containerClass="w-full mt-5 bg-background">
-                Contact Me
-              </Button>
+              <a href="#contact">
+                <Button isBeam containerClass="w-full mt-5 bg-background">
+                  Contact Me
+                </Button>
+              </a>
             </div>
           </div>
         </div>
