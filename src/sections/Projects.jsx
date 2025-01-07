@@ -8,10 +8,12 @@ import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
 import DemoComputer from '../components/DemoComputer.jsx';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Spotlight } from '../components/Spotlight.jsx';
+import { cn } from '../lib/utils.js';
 
 const projectCount = myProjects.length;
 
-const Projects = () => {
+const Projects = ({ className }) => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
   const handleNavigation = (direction) => {
@@ -29,15 +31,16 @@ const Projects = () => {
   }, [selectedProjectIndex]);
 
   const currentProject = myProjects[selectedProjectIndex];
-
   return (
-    <section className="c-space my-20">
+    <section className={cn('c-space mx-auto my-20', className)} id="projects">
       <p className="head-text">My Selected Work</p>
 
       <div className="grid lg:grid-cols-2  grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 bg-card rounded-xl relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
           <div className="absolute top-0 right-0">
-            <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
+            <div className="relative">
+              <Spotlight fill="white" className="top-0 left-0" />
+            </div>
           </div>
 
           <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
@@ -70,7 +73,7 @@ const Projects = () => {
             </a>
           </div>
 
-          <div className="flex justify-between items-center mt-7">
+          <div className="flex justify-between  items-center mt-auto">
             <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
               <ArrowLeft color="white" />
             </button>

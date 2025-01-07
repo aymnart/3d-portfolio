@@ -32,24 +32,54 @@
     --border: 220 15% 25%; /* Darker gray for borders */
     --input: 220 15% 20%; /* Dark gray for inputs */
     --ring: 200 70% 50%; /* Bright blue for focus rings */
+  }
+  :root {
+    /* Base Colors */
+    --background: 240 35% 5%; /* Deep space black with a hint of navy */
+    --foreground: 220 15% 95%; /* Soft white for text resembling starlight */
+    --card: 240 25% 10%; /* Dark navy for cards */
+    --card-foreground: 220 15% 90%; /* Light gray for card text */
+    --popover: 240 25% 12%; /* Slightly lighter navy for popovers */
+    --popover-foreground: 220 15% 90%; /* Light gray for popover text */
 
-    --chart-1: 200 70% 50%; /* Vibrant blue for charts */
-    --chart-2: 160 60% 45%; /* Deep teal for charts */
-    --chart-3: 40 80% 55%; /* Bright yellow for charts */
-    --chart-4: 300 65% 60%; /* Vibrant purple for charts */
-    --chart-5: 0 75% 55%; /* Bright red for charts */
+    /* Primary Colors */
+    --primary: 220 80% 60%; /* Glowing blue like a nebula */
+    --primary-foreground: 220 20% 95%; /* Soft white for text on primary elements */
+    --secondary: 280 70% 50%; /* Vibrant purple inspired by galaxies */
+    --secondary-foreground: 0 0% 100%; /* Pure white for text on secondary elements */
+
+    /* Accent Colors */
+    --accent: 190 90% 50%; /* Bright teal-green for glowing accents */
+    --accent-foreground: 0 0% 100%; /* White for text on accents */
+
+    /* Muted Colors */
+    --muted: 240 25% 15%; /* Muted deep navy-gray */
+    --muted-foreground: 220 15% 50%; /* Soft gray for muted text */
+
+    /* Destructive Colors */
+    --destructive: 0 70% 50%; /* Bright red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White for text on destructive actions */
+
+    /* UI Elements */
+    --border: 240 20% 20%; /* Darker navy for borders */
+    --input: 240 20% 15%; /* Deep navy for inputs */
+    --ring: 220 80% 60%; /* Glowing blue for focus rings */
+
+    /* Gradients */
+    --gradient-start: 250 70% 50%; /* Vibrant purple for gradient start */
+    --gradient-end: 190 90% 50%; /* Bright teal for gradient end */
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border m-0 p-0 box-border;
   }
   body {
     @apply bg-background text-foreground;
   }
   ::selection {
-    @apply bg-accent text-accent-foreground;
+    @apply bg-accent/10 text-accent;
   }
 }
 
@@ -67,7 +97,7 @@
   }
 
   .nav-li {
-    @apply text-foreground hover:text-white font-generalsans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
+    @apply text-foreground/80 hover:text-foreground font-sans max-sm:hover:bg-black-500 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
   }
 
   .nav-li_a {
@@ -84,7 +114,7 @@
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center border border-border justify-center cursor-pointer p-3 rounded-md transition-all active:scale-95 text-card-foreground mx-auto;
+    @apply flex gap-4 items-center border border-border justify-center cursor-pointer transition-all active:scale-95 text-card-foreground mx-auto;
   }
 
   .btn-ping {
@@ -97,7 +127,7 @@
 
   /* hero section */
   .hero_tag {
-    @apply text-center xl:text-6xl md:text-5xl sm:text-4xl text-3xl font-generalsans font-black !leading-normal;
+    @apply text-center xl:text-6xl md:text-5xl sm:text-4xl text-3xl font-sans font-black !leading-normal;
   }
 
   /* about section */
@@ -106,11 +136,11 @@
   }
 
   .grid-headtext {
-    @apply text-xl font-semibold mb-2 text-foreground font-generalsans;
+    @apply text-xl font-semibold mb-2 text-foreground font-sans;
   }
 
   .grid-subtext {
-    @apply text-foreground/60 text-base font-generalsans;
+    @apply text-foreground/60 text-base font-sans max-w-[70ch] text-pretty;
   }
 
   .copy-container {
@@ -129,11 +159,11 @@
 
   /* clients section */
   .client-container {
-    @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
+    @apply grid md:grid-cols-2 grid-cols-1  gap-5 mt-12;
   }
 
   .client-review {
-    @apply rounded-lg md:p-10 p-5 col-span-1 bg-card bg-opacity-50;
+    @apply rounded-lg border border-border md:p-10 p-5 col-span-1 bg-card bg-opacity-50;
   }
 
   .client-content {
@@ -167,7 +197,7 @@
 
   /* contact section */
   .contact-container {
-    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
+    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-16;
   }
 
   .field-label {

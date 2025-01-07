@@ -4,7 +4,7 @@ import { firstName, lastName } from '../constants';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="c-space pt-7 pb-3 text-sm flex justify-between items-center flex-wrap gap-5">
+    <footer className="c-space pt-7 pb-3 text-sm flex justify-between items-center flex-wrap gap-2">
       <TextHoverEffect text="AYMEN" />
       <div className="text-white-500  flex gap-2">
         <p>Terms & Conditions</p>

@@ -3,7 +3,7 @@ import { clientReviews } from '../constants/index.js';
 
 const Clients = () => {
   return (
-    <section className="c-space my-20">
+    <section className="c-space my-20 mx-auto max-w-7xl">
       <h3 className="head-text">Hear from My Clients</h3>
 
       <div className="client-container">

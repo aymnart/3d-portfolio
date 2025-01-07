@@ -34,11 +34,11 @@ export const TextHoverEffect = ({ text, duration }) => {
         <linearGradient id="textGradient" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="25%">
           {hovered && (
             <>
-              <stop offset="0%" stopColor={'hsl(var(--background))'} />
-              <stop offset="25%" stopColor={'hsl(var(--primary))'} />
-              <stop offset="50%" stopColor={'hsl(var(--primary))'} />
-              <stop offset="75%" stopColor={'hsl(var(--primary))'} />
-              <stop offset="100%" stopColor={'hsl(var(--background))'} />
+              <stop offset="0%" stopColor={'hsl(var(--accent))'} />
+              <stop offset="25%" stopColor={'hsl(var(--accent))'} />
+              <stop offset="50%" stopColor={'hsl(var(--accent))'} />
+              <stop offset="75%" stopColor={'hsl(var(--accent))'} />
+              <stop offset="100%" stopColor={'hsl(var(--accent))'} />
             </>
           )}
         </linearGradient>
@@ -67,7 +67,7 @@ export const TextHoverEffect = ({ text, duration }) => {
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        strokeWidth="0.3"
+        strokeWidth="1"
         className="font-[helvetica] font-bold stroke-border/10  dark:stroke-neutral-800 fill-transparent text-7xl  "
         style={{ opacity: hovered ? 0.7 : 0 }}>
         {text}
@@ -77,8 +77,8 @@ export const TextHoverEffect = ({ text, duration }) => {
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        strokeWidth="0.3"
-        className="font-[helvetica] font-bold fill-transparent text-7xl   stroke-border/10  dark:stroke-neutral-800"
+        strokeWidth="0.2"
+        className="font-[helvetica] font-bold fill-transparent text-7xl   stroke-border/40  dark:stroke-neutral-800"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -96,9 +96,9 @@ export const TextHoverEffect = ({ text, duration }) => {
         textAnchor="middle"
         dominantBaseline="middle"
         stroke="url(#textGradient)"
-        strokeWidth="0.3"
+        strokeWidth="0.6"
         mask="url(#textMask)"
-        className="font-[helvetica] font-bold fill-transparent text-7xl  ">
+        className="font-[helvetica] font-bold  fill-accent text-7xl">
         {text}
       </text>
     </svg>

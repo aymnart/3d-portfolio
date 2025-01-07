@@ -2,6 +2,7 @@ import { default as flattenColorPalette } from 'tailwindcss/lib/util/flattenColo
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
@@ -10,7 +11,7 @@ export default {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
       fontFamily: {
-        generalsans: ['General Sans', 'sans-serif'],
+        sans: ['Helvetica', 'sans-serif'],
       },
       colors: {
         black: {
@@ -70,14 +71,39 @@ export default {
         },
       },
       keyframes: {
+        shimmer: {
+          from: {
+            backgroundPosition: '0 0',
+          },
+          to: {
+            backgroundPosition: '-200% 0',
+          },
+        },
         'move-left': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        'move-right': {
+          '100%': { transform: 'translateX(0)' },
+          '0%': { transform: 'translateX(-50%)' },
+        },
+        spotlight: {
+          '0%': {
+            opacity: 0,
+            transform: 'translate(-72%, -62%) scale(0.5)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translate(-50%,-40%) scale(1)',
+          },
+        },
       },
       animation: {
+        shimmer: 'shimmer 3s ease-in infinite',
+        spotlight: 'spotlight 2s ease .75s 1 forwards',
         'spin-slow': 'spin 19s linear infinite',
         'move-left': 'move-left 30s linear infinite',
+        'move-right': 'move-right 30s linear infinite',
       },
     },
   },

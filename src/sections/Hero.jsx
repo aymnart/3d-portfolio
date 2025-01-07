@@ -1,69 +1,42 @@
-import { Leva } from 'leva';
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { useMediaQuery } from 'react-responsive';
-import { PerspectiveCamera } from '@react-three/drei';
+import { ArrowRight } from 'lucide-react';
+import Button from '../components/Button';
+import { Sparkles } from '../components/Spakles';
+import { cn } from '../lib/utils';
 
-import Cube from '../components/Cube.jsx';
-import Rings from '../components/Rings.jsx';
-import ReactLogo from '../components/ReactLogo.jsx';
-import Button from '../components/Button.jsx';
-import Target from '../components/Target.jsx';
-import CanvasLoader from '../components/Loading.jsx';
-import HeroCamera from '../components/HeroCamera.jsx';
-import { calculateSizes, firstName } from '../constants/index.js';
-import { HackerRoom } from '../components/HackerRoom.jsx';
-
-const Hero = () => {
-  // Use media queries to determine screen size
-  const isSmall = useMediaQuery({ maxWidth: 440 });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
-
-  const sizes = calculateSizes(isSmall, isMobile, isTablet);
-
+export default function Hero({ className }) {
   return (
-    <section className="min-h-screen w-full flex flex-col relative" id="home">
-      <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p className="sm:text-3xl text-xl font-medium text-foreground text-center font-generalsans">
-          Hi, I am {firstName} <span className="waving-hand">👋</span>
-        </p>
-        <p className="hero_tag text-gray_gradient">Building Products & Brands</p>
-      </div>
-
-      <div className="w-full h-full absolute inset-0">
-        <Canvas className="w-full h-full">
-          <Suspense fallback={<CanvasLoader />}>
-            {/* To hide controller */}
-            <Leva hidden />
-            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
-
-            <HeroCamera isMobile={isMobile}>
-              <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
-            </HeroCamera>
-
-            <group>
-              <Target position={sizes.targetPosition} />
-              <ReactLogo position={sizes.reactLogoPosition} />
-              <Rings position={sizes.ringPosition} />
-              <Cube position={sizes.cubePosition} />
-            </group>
-
-            <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 10]} intensity={1.618} />
-          </Suspense>
-        </Canvas>
-      </div>
-
-      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
-        <a href="#about" className="w-fit">
-          <Button isBeam containerClass="bg-card sm:w-fit w-full sm:min-w-96">
-            Let&apos;s work together
-          </Button>
+    <section
+      id="home"
+      className={cn(
+        'h-screen  mx-auto flex w-full flex-col items-center gap-2 px-4 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20',
+        className,
+      )}>
+      <Button isBeam containerClass="h-7 text-sm rounded-full px-4">
+        Available for work
+      </Button>
+      <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter sm:text-4xl md:text-5xl lg:leading-[1.1]">
+        Build your component library
+      </h1>
+      <h3 className="max-w-[750px] text-center text-balance text-lg font-light text-foreground">
+        Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open
+        Source.
+      </h3>
+      <div className="flex w-full items-center justify-center mt-4 space-x-4 py-4 md:pb-10">
+        <a href="#contact">
+          <button className="cursor-pointer inline-flex h-10 animate-shimmer gap-2 items-center justify-center rounded-full border border-border bg-[linear-gradient(110deg,hsl(var(--background)),47%,hsl(var(--accent)),55%,hsl(var(--background)))] bg-[length:200%_100%] px-6 font-base text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-1 focus:ring-offset-border">
+            <span> Let&apos;s connect!</span> <ArrowRight className="h-4" />
+          </button>
         </a>
+      </div>
+      <div
+        className="
+         relative -mt-32 h-96 w-full -z-10 overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,hsl(var(--primary)),transparent_70%)] before:opacity-40 after:absolute after:-left-1/2 after:top-1/2 after:aspect-[1/0.6] after:w-[200%] after:rounded-[100%] 
+      after:border-t-4 after:border-foreground after:bg-background after:shadow-[inset_0_2px_20px_#fff,0_-10px_50px_1px_hsl(var(--foreground))]">
+        <Sparkles
+          density={window.innerWidth}
+          className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,hsl(var(--foreground)),transparent_85%)]"
+        />
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
