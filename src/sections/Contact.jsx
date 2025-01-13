@@ -62,6 +62,15 @@ const Contact = () => {
             text: "I didn't receive your message 😢",
             type: 'danger',
           });
+
+          setTimeout(() => {
+            hideAlert(false);
+            setForm({
+              name: '',
+              email: '',
+              message: '',
+            });
+          }, 3000);
         },
       );
   };
@@ -151,9 +160,6 @@ const Contact = () => {
                   </span>
                 )}
               </button>
-              {/* <button className="" >
-                <ArrowUpRight />
-              </button> */}
             </form>
           </div>
         </div>
