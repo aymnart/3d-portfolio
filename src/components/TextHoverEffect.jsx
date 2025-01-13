@@ -34,11 +34,11 @@ export const TextHoverEffect = ({ text, duration }) => {
         <linearGradient id="textGradient" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="25%">
           {hovered && (
             <>
-              <stop offset="0%" stopColor={'hsl(var(--accent))'} />
-              <stop offset="25%" stopColor={'hsl(var(--accent))'} />
-              <stop offset="50%" stopColor={'hsl(var(--accent))'} />
-              <stop offset="75%" stopColor={'hsl(var(--accent))'} />
-              <stop offset="100%" stopColor={'hsl(var(--accent))'} />
+              <stop offset="0%" stopColor={'hsl(var(--primary))'} />
+              <stop offset="25%" stopColor={'hsl(var(--primary))'} />
+              <stop offset="50%" stopColor={'hsl(var(--primary))'} />
+              <stop offset="75%" stopColor={'hsl(var(--primary))'} />
+              <stop offset="100%" stopColor={'hsl(var(--primary))'} />
             </>
           )}
         </linearGradient>
@@ -98,7 +98,7 @@ export const TextHoverEffect = ({ text, duration }) => {
         stroke="url(#textGradient)"
         strokeWidth="0.6"
         mask="url(#textMask)"
-        className="font-[helvetica] font-bold  fill-accent text-7xl">
+        className="font-[helvetica] font-bold  fill-primary text-7xl">
         {text}
       </text>
     </svg>
