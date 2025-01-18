@@ -98,7 +98,7 @@ export const TextHoverEffect = ({ text, duration }) => {
         stroke="url(#textGradient)"
         strokeWidth="0.6"
         mask="url(#textMask)"
-        className="font-[helvetica] font-bold  fill-primary text-7xl">
+        className="font-[helvetica] font-bold  fill-primary/10 text-7xl">
         {text}
       </text>
     </svg>

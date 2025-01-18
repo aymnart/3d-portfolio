@@ -1,6 +1,8 @@
-function Hr() {
+import { cn } from '../lib/utils';
+
+function Hr({ className }) {
   return (
-    <div className="relative flex items-center justify-center h-10 w-full">
+    <div className={cn('relative flex items-center justify-center z-10 h-10 w-full', className)}>
       <div className="absolute inset-0 flex items-center">
         <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
       </div>

@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react';
 import Hr from './components/Hr';
+import Lamp from './components/ui/lamp';
 const Navbar = lazy(() => import('./sections/Navbar'));
 const Hero = lazy(() => import('./sections/Hero'));
 const About = lazy(() => import('./sections/About'));
@@ -22,6 +23,8 @@ const App = () => {
         <Hr />
         <Clients className={'max-w-7xl'} />
         <WorkExperience className={'max-w-7xl'} />
+        <Hr />
+        <Lamp />
         <Contact className={'max-w-7xl'} />
         <Hr />
         <Footer />

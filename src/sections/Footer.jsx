@@ -1,3 +1,4 @@
+import { PhoneIcon } from 'lucide-react';
 import { TextHoverEffect } from '../components/TextHoverEffect';
 import { firstName, lastName } from '../constants';
 
@@ -13,14 +14,14 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col absolute right-3 gap-3">
-        <a href="#" className="social-icon">
+        <a href="https://github.com/aymnart" target="_blank" className="social-icon">
           <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
         </a>
-        <a href="#" className="social-icon">
-          <img src="/assets/twitter.svg" alt="twitter" className="w-1/2 h-1/2" />
+        <a href="https://www.linkedin.com/in/aymenamara/" target="_blank" className="social-icon">
+          <img src="/assets/linkedin.svg" alt="twitter" className="w-1/2 h-1/2" />
         </a>
-        <a href="#" className="social-icon">
-          <img src="/assets/instagram.svg" alt="instagram" className="w-1/2 h-1/2" />
+        <a href="tel:+21653863641" className="social-icon">
+          <PhoneIcon />
         </a>
       </div>
       <p className="text-white-500">

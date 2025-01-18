@@ -8,18 +8,17 @@ export default function Hero({ className }) {
     <section
       id="home"
       className={cn(
-        'h-screen  mx-auto flex w-full flex-col items-center gap-2 px-4 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20',
+        'h-screen mx-auto flex w-full flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20',
         className,
       )}>
       <Button isBeam containerClass="h-7 text-sm rounded-full px-4">
         Available for work
       </Button>
       <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter sm:text-4xl md:text-5xl lg:leading-[1.1]">
-        Build your component library
+        Turning Ideas into Digital Reality
       </h1>
       <h3 className="max-w-[750px] text-center text-balance text-lg font-light text-foreground">
-        Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open
-        Source.
+        Full-stack developer crafting elegant solutions to complex problems
       </h3>
       <div className="flex w-full items-center justify-center mt-4 space-x-4 py-4 md:pb-10">
         <a href="#contact">
